@@ -105,6 +105,9 @@
         <label for="answer12">
             <input type="radio" id="answer12" name="q3" value="7th">7th
         </label>
+        <p>
+            <input type="submit" value="Submit Quiz Answers">
+        </p>
 
      </body>
 
