@@ -80,30 +80,30 @@
 
         <p>Who is San Antonio's current mayor ?</p>
         <label for="answer1">
-            <input type="radio" id="answer1" name="q1" value="Julian Castro">Julian Castro
+            <input type="radio" id="answer1" name="q2" value="Julian Castro">Julian Castro
         </label>
         <label for="answer2">
-            <input type="radio" id="answer2" name="q1" value="Nelson Wolff">Nelson Wolff
+            <input type="radio" id="answer2" name="q2" value="Nelson Wolff">Nelson Wolff
         </label>
         <label for="answer3">
-            <input type="radio" id="answer3" name="q1" value="Joaquin Castro">Joaquin Castro
+            <input type="radio" id="answer3" name="q2" value="Joaquin Castro">Joaquin Castro
         </label>
         <label for="answer4">
-            <input type="radio" id="answer4" name="q1" value="no one">no one
+            <input type="radio" id="answer4" name="q2" value="no one">no one
         </label>
 
         <p>Where does San Antonio rank amongst the US largest cities # ?</p>
         <label for="answer1">
-            <input type="radio" id="answer1" name="q1" value="5th">5th
+            <input type="radio" id="answer1" name="q3" value="5th">5th
         </label>
         <label for="answer2">
-            <input type="radio" id="answer2" name="q1" value="9th">9th
+            <input type="radio" id="answer2" name="q3" value="9th">9th
         </label>
         <label for="answer3">
-            <input type="radio" id="answer3" name="q1" value="11th">11th
+            <input type="radio" id="answer3" name="q3" value="11th">11th
         </label>
         <label for="answer4">
-            <input type="radio" id="answer4" name="q1" value="7th">7th
+            <input type="radio" id="answer4" name="q3" value="7th">7th
         </label>
 
      </body>
