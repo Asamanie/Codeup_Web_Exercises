@@ -36,26 +36,24 @@
         <h3>Compose an Email</h3>
 
         <form method="POST">
-            <p>
-                <label for="to">To</label>
-                <input id="to" name="to" type="text">
-            </p>
-            <p>
-                <label for="from">From</label>
-                <input id="eMail" name="from" type="email">
-            </p>
-            <p>
-                <label for="subject">Subject</label>
-                <input id="eMail" name="subject" type="email">
-            </p>
-            <p>
-            <textarea name="email_body" rows="35" cols="75" placeholder="Content here"></textarea>
-            </p>
-            <p>
-                <input type="submit" value="Submit">
-            </p>
-            
-
+        <p>
+            <label for="to">To</label>
+            <input id="to" name="to" type="text">
+        </p>
+        <p>
+            <label for="from">From</label>
+            <input id="eMail" name="from" type="email">
+        </p>
+        <p>
+            <label for="subject">Subject</label>
+            <input id="eMail" name="subject" type="email">
+        </p>
+        <p>
+        <textarea name="email_body" rows="35" cols="75" placeholder="Content here"></textarea>
+        </p>
+        <p>
+            <input type="submit" value="Submit">
+        </p>
         </form> -->
 
      </body>
