@@ -13,6 +13,7 @@
     ?>
 
     <body>
+        <h3>User Login</h3>
         <!-- method is the HOW / action is the WHERE  -->
         <form method="POST">
         <p>
@@ -30,26 +31,31 @@
         <p>
             <input type="submit" value="Log In">
         </p>
-
-        <p>
-        <textarea name="post_body" rows="5" cols="120"></textarea>
-        </p>
         </form>
 
-        <!-- <h1>Here's another form!</h1>
+        <h3>Compose an Email</h3>
 
-        <form method="POST" acion="another_file.php">
+        <form method="POST">
             <p>
-                <label for="First_Name">First Name</label>
-                <input id="First_Name" name="First" type="text">
+                <label for="to">To</label>
+                <input id="to" name="to" type="text">
             </p>
             <p>
-                <label for="Last_Name">Last Name</label>
-                <input id="Last_Name" name="Last" type="text">
+                <label for="from">From</label>
+                <input id="eMail" name="from" type="email">
             </p>
             <p>
-                <input type="submit">
+                <label for="subject">Subject</label>
+                <input id="eMail" name="subject" type="email">
             </p>
+            <p>
+            <textarea name="email_body" rows="35" cols="75"> Content here</textarea>
+            </p>
+            <p>
+                <input type="submit" value="Submit">
+            </p>
+            
+
         </form> -->
 
      </body>
