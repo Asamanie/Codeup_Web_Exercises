@@ -15,7 +15,7 @@
     <body>
         <h3>User Login</h3>
         <!-- method is the HOW / action is the WHERE  -->
-            <form method="POST">
+        <form method="POST">
             <p>
                 <label for="first_name">First name</label>
                 <input id="first_name" name="first_name" type="text">
@@ -34,7 +34,6 @@
         </form>
 
         <h3>Compose an Email</h3>
-
         <form method="POST">
             <p>
                 <label for="to">To</label>
@@ -61,8 +60,9 @@
             </p>
         </form>
 
+
+        <h3>San Antonio Multiple Choice Quiz</h3>
         <form method="POST">
-            <h3>San Antonio Multiple Choice Quiz</h3>
 
             <p>What is Tim Duncans jersey # ?</p>
             <label for="answer1">
@@ -106,8 +106,28 @@
                 <input type="radio" id="answer12" name="q3" value="7th">7th
             </label>
             <p>
+            <label for="Did enjoy this quiz">Did you enjoy this quiz: </label>
+                <select id="Did enjoy this quiz" name="Did enjoy this quiz">
+                    <option value = "1">Loved it!</option>
+                    <option value = "2">Not at all!</option>
+                    <option value = "3">It was okay!</option>
+                    <option value = "4">Ummm....</option>
+                </select>
+            </p>    
+                <input type="submit">
+            <p>
                 <input type="submit" value="Submit Quiz Answers">
             </p>
+        </form>
+
+        <h3>Select Testing</h3>
+        <form method="POST">
+            <label for="hungry">Did you eat lunch today: </label>
+                <select id="hungry" name="hungry">
+                    <option value = "1">Yes</option>
+                    <option No = "2">No</option>
+                </select>
+                <input type="submit">
         </form>
 
      </body>
