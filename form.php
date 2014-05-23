@@ -16,8 +16,12 @@
         <!-- method is the HOW / action is the WHERE  -->
         <form method="POST">
         <p>
-            <label for="username">Username</label>
-            <input id="username" name="username" type="text">
+            <label for="first_name">First name</label>
+            <input id="first_name" name="first_name" type="text">
+        </p>
+        <p>
+            <label for="last_name">Last name</label>
+            <input id="last_name" name="last_name" type="text">
         </p>
         <p>
             <label for="password">Password</label>
@@ -25,6 +29,10 @@
         </p>
         <p>
             <input type="submit" value="Log In">
+        </p>
+
+        <p>
+        <textarea name="post_body" rows="5" cols="120"></textarea>
         </p>
         </form>
 
