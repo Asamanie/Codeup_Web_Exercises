@@ -49,12 +49,62 @@
             <input id="eMail" name="subject" type="email">
         </p>
         <p>
-        <textarea name="email_body" rows="35" cols="75" placeholder="Content here"></textarea>
+        <textarea name="email_body" rows="25" cols="55" placeholder="Content here"></textarea>
         </p>
+
+        <p>
+            <label for="send_email">
+                <input type="checkbox" id="send_email" name="send_email" value="yes" checked> Please send a copy to my sent folder!
+            </label>
         <p>
             <input type="submit" value="Submit">
         </p>
         </form> -->
+
+        <form>
+        <h3>San Antonio Multiple Choice Quiz</h3>
+
+        <p>What is Tim Duncans jersey # ?</p>
+        <label for="answer1">
+            <input type="radio" id="answer1" name="q1" value="houston">9
+        </label>
+        <label for="answer2">
+            <input type="radio" id="answer2" name="q1" value="dallas">50
+        </label>
+        <label for="answer3">
+            <input type="radio" id="answer3" name="q1" value="austin">21
+        </label>
+        <label for="answer4">
+            <input type="radio" id="answer4" name="q1" value="san antonio">22
+        </label>
+
+        <p>Who is San Antonio's current mayor ?</p>
+        <label for="answer1">
+            <input type="radio" id="answer1" name="q1" value="Julian Castro">Julian Castro
+        </label>
+        <label for="answer2">
+            <input type="radio" id="answer2" name="q1" value="Nelson Wolff">Nelson Wolff
+        </label>
+        <label for="answer3">
+            <input type="radio" id="answer3" name="q1" value="Joaquin Castro">Joaquin Castro
+        </label>
+        <label for="answer4">
+            <input type="radio" id="answer4" name="q1" value="no one">no one
+        </label>
+
+        <p>Where does San Antonio rank amongst the US largest cities # ?</p>
+        <label for="answer1">
+            <input type="radio" id="answer1" name="q1" value="5th">5th
+        </label>
+        <label for="answer2">
+            <input type="radio" id="answer2" name="q1" value="9th">9th
+        </label>
+        <label for="answer3">
+            <input type="radio" id="answer3" name="q1" value="11th">11th
+        </label>
+        <label for="answer4">
+            <input type="radio" id="answer4" name="q1" value="7th">7th
+        </label>
 
      </body>
 
