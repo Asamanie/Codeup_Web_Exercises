@@ -49,7 +49,7 @@
                 <input id="eMail" name="subject" type="email">
             </p>
             <p>
-            <textarea name="email_body" rows="35" cols="75"> Content here</textarea>
+            <textarea name="email_body" rows="35" cols="75" placeholder="Content here"></textarea>
             </p>
             <p>
                 <input type="submit" value="Submit">
