@@ -79,31 +79,31 @@
         </label>
 
         <p>Who is San Antonio's current mayor ?</p>
-        <label for="answer1">
-            <input type="radio" id="answer1" name="q2" value="Julian Castro">Julian Castro
+        <label for="answer5">
+            <input type="radio" id="answer5" name="q2" value="Julian Castro">Julian Castro
         </label>
-        <label for="answer2">
-            <input type="radio" id="answer2" name="q2" value="Nelson Wolff">Nelson Wolff
+        <label for="answer6">
+            <input type="radio" id="answer6" name="q2" value="Nelson Wolff">Nelson Wolff
         </label>
-        <label for="answer3">
-            <input type="radio" id="answer3" name="q2" value="Joaquin Castro">Joaquin Castro
+        <label for="answer7">
+            <input type="radio" id="answer7" name="q2" value="Joaquin Castro">Joaquin Castro
         </label>
-        <label for="answer4">
-            <input type="radio" id="answer4" name="q2" value="no one">no one
+        <label for="answer8">
+            <input type="radio" id="answer8" name="q2" value="no one">no one
         </label>
 
         <p>Where does San Antonio rank amongst the US largest cities # ?</p>
-        <label for="answer1">
-            <input type="radio" id="answer1" name="q3" value="5th">5th
+        <label for="answer9">
+            <input type="radio" id="answer9" name="q3" value="5th">5th
         </label>
-        <label for="answer2">
-            <input type="radio" id="answer2" name="q3" value="9th">9th
+        <label for="answer10">
+            <input type="radio" id="answer10" name="q3" value="9th">9th
         </label>
-        <label for="answer3">
-            <input type="radio" id="answer3" name="q3" value="11th">11th
+        <label for="answer11">
+            <input type="radio" id="answer11" name="q3" value="11th">11th
         </label>
-        <label for="answer4">
-            <input type="radio" id="answer4" name="q3" value="7th">7th
+        <label for="answer12">
+            <input type="radio" id="answer12" name="q3" value="7th">7th
         </label>
 
      </body>
