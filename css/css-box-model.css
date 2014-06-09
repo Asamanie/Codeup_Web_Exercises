@@ -1,0 +1,32 @@
+
+div	{
+	border: 1px solid black;
+	height: 50px;
+	width:  150px;
+	padding: 10px;
+	font-weight: bold;
+	color: #ffffff; 
+}
+#red {
+	background: #ff4040;
+}
+#orange {
+	background: #FF7F24;
+	margin: 10px 30px;
+}
+#yellow {
+	background: #F7F76D;
+	margin: 10px 60px;
+}
+#green {
+	background: #2BA135;
+	margin: 10px 90px;
+}
+#blue {
+	background: #1F0Fd1;
+	margin: 10px 120px;
+}
+#purple {
+	background: #830FD1;
+	margin: 10px 150px;
+}

@@ -1,0 +1,30 @@
+<html>
+<head>
+	<title>Arrays</title>
+</head>
+<body>
+	<script>
+		var names = ['Andrew', 'Larry','Randy','Jeff'];
+		console.log('The total number of names in this array is: ' + names.length);
+		// console.log('Hello my name is ' + names[0]);
+		// console.log('Hello my name is ' + names[1]);
+		// console.log('Hello my name is ' + names[2]);
+		// console.log('Hello my name is ' + names[3]);
+	
+		// for loop
+		// for (var i = 0; i < names.length; i++) {
+		// 	console.log('The name at index ' + i + ' is: ' + names[i]);
+
+		// }
+
+		//forEach loop
+		names.forEach(function (name,index,element){
+		//element is the names in the array
+		//index is the iterator
+		//array is the names array itself
+		console.log('The name at index ' + index + ' is: ' + name);
+	});
+	</script>
+
+</body>
+</html>

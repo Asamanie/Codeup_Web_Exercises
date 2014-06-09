@@ -1,22 +1,52 @@
-<?php
+<?
+ 
+$filename = 'data/adr_bk.csv';
 
-$address_book = [
-    ['The White House', '1600 Pennsylvania Avenue NW', 'Washington', 'DC', '20500'],
-    ['Marvel Comics', 'P.O. Box 1527', 'Long Island City', 'NY', '11101'],
-    ['LucasArts', 'P.O. Box 29901', 'San Francisco', 'CA', '94129-0901']
-];
+$address_book = [];
 
-$filename = "data/adr_bk.csv";
+class AddressDataStore {
 
-function write_csv($bigArray, $filename) {
-	if (is_writable($filename)) {
-		$handle = fopen($filename, 'w');
-		foreach($bigArray as $fields) {
+    public $filename = '';
+
+    public function read_address_book() {
+        $handle = fopen($this->filename, 'r');
+		$address_book = [];
+		while (!feof($handle)) {
+			$row = fgetcsv($handle);
+			if (is_array($row)) {
+				$address_book[] = $row;
+			}
+		}
+	fclose($handle);
+	return $address_book;
+    }
+
+    public function write_address_book($addresses_array) {
+        if (is_writable($this->filename)) {
+		$handle = fopen($this->filename, 'w');
+		foreach($addresses_array as $fields) {
 			fputcsv($handle, $fields);
 		}
-		fclose($handle);
+		fclose($handle); 
 	}
+    }
+
 }
+
+$address_class = new AddressDataStore();
+$address_class->filename="data/adr_bk.csv";
+$address_class->read_address_book();
+$address_class->write_address_book($address_book);
+
+$address_book = $address_class->read_address_book();
+
+if (isset($_GET['id'])) {
+	unset($address_book[$_GET['id']]);
+	$address_class->write_address_book($address_book);
+	header("Location: address_book.php");
+	exit;
+
+}	
 
 $new_address = [];
 
@@ -30,7 +60,8 @@ if (!empty($_POST['name']) && !empty($_POST['address']) && !empty($_POST['city']
 	$new_address['phone'] = $_POST['phone'];
 
 	array_push($address_book, $new_address);
-	write_csv($address_book,$filename);
+	$address_class->write_address_book($address_book);
+
 
 } else {
 
@@ -61,11 +92,12 @@ if (!empty($_POST['name']) && !empty($_POST['address']) && !empty($_POST['city']
 			<th>Zip</th>
 			<th>Phone</th>
 		</tr>
-		<? foreach ($address_book as $fields) : ?>
+		<? foreach ($address_book as $key => $fields) : ?>
 		<tr>
 			<? foreach ($fields as $value) : ?>
-				<td><?= $value; ?></td>
+				<td><?= htmlspecialchars(strip_tags($value)); ?></td>
 			<? endforeach; ?>
+			<td><a href = "?id=<?=$key;?>">Remove Entry</a></td>
 		</tr>	
 		<? endforeach; ?>	
 	</table>	

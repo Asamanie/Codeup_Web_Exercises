@@ -1,0 +1,34 @@
+<html>
+<head>
+	<title>user interactions</title>
+</head>
+<body>
+	<script>
+	// todo: Ask the user for their name.
+	//       Keep asking if an empty input is provided.
+		var response = prompt('Hello, what is your name?');
+		
+		while (response == "" || response == null){
+			response = prompt('Please give me your name');
+		} 
+		alert('Thank you! ' + response);
+
+
+
+		
+
+		var likes_pizza = confirm('Do you like pizza?');
+
+		if (likes_pizza) {
+				alert('Nice!!!');
+			} else {
+				alert("Thats not good!");
+		}
+			// todo: Show an alert message that welcomes the user based on their input.
+
+	// todo: Ask the user if they like pizza.
+	//       Based on their answer tell show a creative alert message.
+	</script>
+
+</body>
+</html>
