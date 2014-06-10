@@ -13,16 +13,25 @@
 			// todo:
 			// Create person object with firstName and lastName properties (set to your first and last name).
 
-			var person = {};
-			person.first = "Andrew";
-			person.last = "Samaniego";
-
-			// todo:
-			// Add a say hello method to the person object that alerts hello using the firstName and lastName properties.
-			person.sayHello = function() {
+			var person = {
+				"first": "Andrew",
+				"last" : "Samaniego";
+				person.sayHello = function() {
 				alert('Hello ' + this.first + ' ' + this.last);
+				}			
 			};
-			person.sayHello();
+		
+
+		// the syntax below is the same as above yet shorter
+			// person.first = "Andrew";
+			// person.last = "Samaniego";
+
+			// // todo:
+			// // Add a say hello method to the person object that alerts hello using the firstName and lastName properties.
+			// person.sayHello = function() {
+			// 	alert('Hello ' + this.first + ' ' + this.last);
+			// };
+			// person.sayHello();
 
 			// Say hello from the person object.
 			// person.sayHello();
