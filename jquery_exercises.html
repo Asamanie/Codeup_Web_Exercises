@@ -39,10 +39,27 @@
 		</div>	
 		<script>
 
-		// console.log($('#second-div').html());
-		$('.codeup').css('border', '1px solid red'); // added border to each <p>
+
+		$('h1').click(function() {
+			$(this).css('background-color', 'gray');
+		});
+
+		$('p').dblclick(function() {
+			$(this).css('font-size', '18px');
+		});
+
+        $('li').hover(
+            function() {
+                $(this).css('color', 'red');
+            },
+            function() {
+                $(this).css('color', 'black');
+            }
+        );
+        
 		
 		</script>
 	</body>
 	
 </html>
+
