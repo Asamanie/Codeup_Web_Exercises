@@ -6,12 +6,34 @@
   <script src="js/jquery.js"></script>
 </head>
 	<body>
-		<h1>Header1</h1>
+		<h1>jQuery Lesson Testing</h1>
+		<div class="intro" id="first-div">
+			<h2>This is the first paragraph</h2>
+			<p>Today we are working on jQuery, so I'm going to write some more inforamtion here.  Today we are working on jQuery, so I'm going to write some more inforamtion here.Today we are working on jQuery, so I'm going to write some more inforamtion here.Today we are working on jQuery, so I'm going to write some more inforamtion here.  
+			</p>
+			<p>Today we are working on jQuery, so I'm going to write some more inforamtion here.Today we are working on jQuery, so I'm going to write some more inforamtion here.Today we are working on jQuery, so I'm going to write some more inforamtion here.
+			</p>
+		</div>
+		<div class="intro" id="second-div">
+			<h2>This is the second paragraph</h2>
+			<p>Today we are working on jQuery, so I'm going to write some more inforamtion here.  Today we are working on jQuery, so I'm going to write some more inforamtion here.Today we are working on jQuery, so I'm going to write some more inforamtion here.Today we are working on jQuery, so I'm going to write some more inforamtion here.  
+			</p>
+			<p>Today we are working on jQuery, so I'm going to write some more inforamtion here.Today we are working on jQuery, so I'm going to write some more inforamtion here.Today we are working on jQuery, so I'm going to write some more inforamtion here.
+			</p>
+		</div>
+		<div class="intro" id="colors">
+			<ul>
+				<li>Red</li>
+				<li>Blue</li>	
+				<li>Green</li>
+				<li>Yellow</li>
+				<li>White</li>
+			</ul>
+		</div>	
 		<script>
 
-		$(document).ready(function() {
-	    alert( 'The DOM has finished loading!' );
-		});
+		console.log($('#second-div').html());
+
 		
 		</script>
 	</body>
