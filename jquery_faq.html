@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <script src="/js/jquery.js"></script>
+  <title>10 FAQs about national parks</title>
+  <style>
+  	.invisible {
+  		display: none
+  	}
+  </style>
+  
+  <script>
+	  $('document').ready(function() {
+	  		$('#facts').click(function(event) {
+	            event.preventDefault();
+	            $('dd').toggleClass('invisible');
+	        });
+	    });    
+  </script>
+
+</head>
+	<body>
+	<h1>10 FAQs about national parks</h1>
+	<button id="facts">Click to see fun facts about each Nationl Park .</button>
+	<dl>
+	  <dt>1. Carlsbad Caverns National Park</dt>
+	    <dd class='invisible'>This park has the nation’s deepest cave is 1,593 ft deep</dd>
+	  <dt>2. Yellowstone National Park</dt>
+	    <dd class='invisible'>This park has 1 active volcano, thousands of petrified trees, and almost 300 waterfalls</dd>
+	  <dt>3. Yellowstone National Park</dt>
+	    <dd class='invisible'>This park was the nations FIRST National Park.</dd>
+	  <dt>4. Hot Springs National Park</dt>
+	    <dd class='invisible'>This park is the smallest National Park.</dd>
+	  <dt>5. White Sands National Park</dt>
+	    <dd class='invisible'>This park has been the backdrop to many music videos for groups like Boys II Men, Pink Floyd, The Scorpions and several others.</dd>
+	  <dt>6. Big Bend National Park</dt>
+	    <dd class='invisible'>This park is located in Texas and is Texas largest National Park </dd>
+	  <dt>7. Some park 7 National Park</dt>
+	    <dd class='invisible'>Fun fact #7</dd>
+	  <dt>8. Some park 8 National Park</dt>
+	    <dd class='invisible'>Fun fact #8</dd>
+	  <dt>9. Some park 9 National Park</dt>
+	    <dd class='invisible'>Fun fact #9</dd>
+	  <dt>10. Some park 10 National Park</dt>
+	    <dd class='invisible'>Fun fact #10</dd>	
+	</dl>
+	</body>
+</html>
