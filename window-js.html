@@ -2,6 +2,8 @@
 <html>
 <head>
     <title>Delayed Autosave</title>
+    <script src='/js/jquesry.js'></script>
+
 </head>
 <body>
 
@@ -19,7 +21,7 @@
             alert('Saved'); // delay time in milliseconds
         }
 
-        function autosave() {
+        function autosave() {  // sets timer at 5 sec to auto save 
             clearTimeout(timeoutId);
             timeoutId = setTimeout(function() {
                 save();
@@ -28,6 +30,8 @@
     
         var textarea = document.getElementById('important');
         textarea.addEventListener('keyup', autosave, false);
+
+        $('#important').on('keyup', autosave); // will autosave after 5 seconds after the last key is pressed and released. 
 
     </script> 
 
