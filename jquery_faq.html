@@ -9,20 +9,27 @@
   		display: none
   	}
   </style>
-  
+
   <script>
-	  $('document').ready(function() {
-	  		$('#facts').click(function(event) {
-	            event.preventDefault();
-	            $('dd').toggleClass('invisible');
-	        });
-	    });    
+	$('document').ready(function() {
+  		$('#facts').click(function(event) {
+            event.preventDefault();
+            $('dd').toggleClass('invisible');
+	    });
+	  
+	  	$('ul').each(function() {
+	  		$(this).children().first().css('font-weight', 'bold');
+	  	});
+	  	$('li').click(function () {
+	  		$(this).parent().addClass('invisible');
+	  	});	
+	});		
   </script>
 
 </head>
 	<body>
 	<h1>10 FAQs about national parks</h1>
-	<button id="facts">Click to see fun facts about each Nationl Park .</button>
+	<button id="facts">Click to see fun facts about each Nationl Park</button>
 	<dl>
 	  <dt>1. Carlsbad Caverns National Park</dt>
 	    <dd class='invisible'>This park has the nation’s deepest cave is 1,593 ft deep</dd>
@@ -35,7 +42,7 @@
 	  <dt>5. White Sands National Park</dt>
 	    <dd class='invisible'>This park has been the backdrop to many music videos for groups like Boys II Men, Pink Floyd, The Scorpions and several others.</dd>
 	  <dt>6. Big Bend National Park</dt>
-	    <dd class='invisible'>This park is located in Texas and is Texas largest National Park </dd>
+	    <dd class='invisible'>This park is located in Texas and is Texas largest National Park</dd>
 	  <dt>7. Some park 7 National Park</dt>
 	    <dd class='invisible'>Fun fact #7</dd>
 	  <dt>8. Some park 8 National Park</dt>
@@ -45,5 +52,23 @@
 	  <dt>10. Some park 10 National Park</dt>
 	    <dd class='invisible'>Fun fact #10</dd>	
 	</dl>
+
+	<h1>Park List</h1>
+	<h3>National Parks</h3>
+	<ul id='national parks'>
+		<li>Badands</li>
+		<li>Everglades</li>
+		<li>Yellowstone</li>
+		<li>Hot Springs</li>
+		<li>White Sands</li>
+	</ul>
+	<h3>State Parks</h3>
+	<ul id='state parks'>
+		<li>Enchanhted Rock</li>
+		<li>Davis Mountain</li>
+		<li>Choke Canyon</li>
+		<li>Big Bend</li>
+		<li>San Jacinto</li>
+	</ul>
 	</body>
 </html>
