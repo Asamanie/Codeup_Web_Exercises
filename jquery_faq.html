@@ -14,15 +14,18 @@
 	$('document').ready(function() {
   		$('#facts').click(function(event) {
             event.preventDefault();
-            $('dd').toggleClass('invisible');
+            $('dd').toggle(1500);
 	    });
 	  
-	  	$('ul').each(function() {
+	  	$('ul').each(function() {  // makes the font of each first item in the li BOLD
 	  		$(this).children().first().css('font-weight', 'bold');
 	  	});
-	  	$('li').click(function () {
-	  		$(this).parent().addClass('invisible');
-	  	});	
+	  	// $('li').click(function () { 
+	  	// 	$(this).parent().addClass('invisible');
+	  	// });	
+	  	$('h3').click(function() {
+	  		$(this).next().toggle(1000);
+	  	});
 	});		
   </script>
 
