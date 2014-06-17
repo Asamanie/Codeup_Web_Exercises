@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <script src="/js/jquery.js"></script>
+  <title>Andrew's "Guac a Mole é" Game</title>
+  <link rel="stylesheet" type="text/css" href="css/whack.css"> 
+</head>
+<body id="body">
+    <div class="wrapper">
+    <h1 id="header">Guac a Mole é</h1>
+    <div id="gameboard">
+
+        <div class="box">
+        	<img class="Avocado" src="img/avocado.png">
+        </div>
+        <div class="box">
+        	<img class="Avocado" src="img/avocado.png">
+        </div>
+        <div class="box">
+        	<img class="Avocado" src="img/avocado.png">
+        </div>
+        <div class="box">
+        	<img class="Avocado" src="img/avocado.png">
+        </div>
+        <div class="box">
+        	<img class="Avocado" src="img/avocado.png">
+        </div>
+        <div class="box">
+        	<img class="Avocado" src="img/avocado.png">
+        </div>
+        <div class="box">
+        	<img class="Avocado" src="img/avocado.png">
+        </div>
+        <div class="box">
+        	<img class="Avocado" src="img/avocado.png">
+        </div>
+        <div class="box">
+        	<img class="Avocado" src="img/avocado.png">
+        </div>
+    </div>
+
+<button id="start" type="button">Start Game</button> 
+
+<div id="score">
+	<p>Score: 0</p>       	
+		
+        <script>
+
+     	var boxes = $('.box');
+		var score_count = 0;
+		var timer = 10;
+		var intervalId;
+        // starts the game once the button is clicked 
+		$('#start').click(function() {
+        // score keeper, set to stay at 0 until avocado is "whacked"    
+		score_count = 0;
+		timer = 10; // game is currenlty set to 10 seconds 
+		$(this).hide(); // once avocado is "whacked" img hides and new one pops up
+
+		intervalId = setInterval(function(){
+			$('.box').children().fadeOut();
+			var rand = Math.floor(Math.random() * boxes.length);
+			$(boxes[rand]).children().fadeIn();
+			timer--;
+			if (timer <= 0) {
+				// end the game
+				clearInterval(intervalId);
+				$('#start').show();
+				}
+			}, 1000);
+		});
+
+		$('img').click(function() {
+			$(this).hide();
+			score_count = score_count + 1;
+			$('#score').html('Score: ' + score_count);
+		});	
+
+	  	</script>
+    </body>
+</html>
