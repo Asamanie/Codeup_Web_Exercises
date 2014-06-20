@@ -1,54 +1,21 @@
 <?
- 
+
+require('classes/address_data_store.php');
+
 $filename = 'data/adr_bk.csv';
 
 $address_book = [];
 
-class AddressDataStore {
-
-    public $filename = '';
-
-    public function read_address_book() {
-        $handle = fopen($this->filename, 'r');
-		$address_book = [];
-		while (!feof($handle)) {
-			$row = fgetcsv($handle);
-			if (is_array($row)) {
-				$address_book[] = $row;
-			}
-		}
-	fclose($handle);
-	return $address_book;
-    }
-
-    public function write_address_book($addresses_array) {
-        if (is_writable($this->filename)) {
-		$handle = fopen($this->filename, 'w');
-		foreach($addresses_array as $fields) {
-			fputcsv($handle, $fields);
-		}
-		fclose($handle); 
-	}
-    }
-
-}
-
-$address_class = new AddressDataStore();
-$address_class->filename="data/adr_bk.csv";
-$address_class->read_address_book();
-$address_class->write_address_book($address_book);
-
-$address_book = $address_class->read_address_book();
+$address_class = new AddressDataStore($filename);
+$address_book = $address_class->read();
 
 if (isset($_GET['id'])) {
 	unset($address_book[$_GET['id']]);
-	$address_class->write_address_book($address_book);
+	$address_class->write($address_book);
 	header("Location: address_book.php");
 	exit;
 
 }	
-
-$new_address = [];
 
 if (!empty($_POST['name']) && !empty($_POST['address']) && !empty($_POST['city']) && !empty($_POST['state']) && !empty($_POST['zip'])) {
 
@@ -60,7 +27,7 @@ if (!empty($_POST['name']) && !empty($_POST['address']) && !empty($_POST['city']
 	$new_address['phone'] = $_POST['phone'];
 
 	array_push($address_book, $new_address);
-	$address_class->write_address_book($address_book);
+	$address_class->write($address_book);
 
 
 } else {
@@ -92,7 +59,7 @@ if (!empty($_POST['name']) && !empty($_POST['address']) && !empty($_POST['city']
 			<th>Zip</th>
 			<th>Phone</th>
 		</tr>
-		<? foreach ($address_book as $key => $fields) : ?>
+			<? foreach ($address_book as $key => $fields) : ?>
 		<tr>
 			<? foreach ($fields as $value) : ?>
 				<td><?= htmlspecialchars(strip_tags($value)); ?></td>
