@@ -3,11 +3,11 @@
 require('classes/address_data_store.php');
 
 $filename = 'data/adr_bk.csv';
-
 $address_book = [];
-
 $address_class = new AddressDataStore($filename);
 $address_book = $address_class->read();
+
+class UnexpectedTypeException extends Exception { }
 
 if (isset($_GET['id'])) {
 	unset($address_book[$_GET['id']]);
@@ -16,28 +16,41 @@ if (isset($_GET['id'])) {
 	exit;
 
 }	
+try {
+		if (!empty($_POST['name']) && !empty($_POST['address']) && !empty($_POST['city']) && !empty($_POST['state']) && !empty($_POST['zip'])) {
+		$new_address['name'] = $_POST['name'];
+			if (strlen($new_address) > 125) {
+				throw new Exception ("Name can't exceed 125 characters");
+				}	// } else {
+			}			
+			array_push($address_book, $new_address);
+			$address_class->write($address_book);
+			
+			catch(UnexpectedTypeException $e) {
+				    $msg = $e->getMessage() . PHP_EOL;
+				}	
 
-if (!empty($_POST['name']) && !empty($_POST['address']) && !empty($_POST['city']) && !empty($_POST['state']) && !empty($_POST['zip'])) {
+			}	
+			$new_address['address'] = $_POST['address'];
+			$new_address['city'] = $_POST['city'];
+			$new_address['state'] = $_POST['state'];
+			$new_address['zip'] = $_POST['zip'];
+			$new_address['phone'] = $_POST['phone'];
 
-	$new_address['name'] = $_POST['name'];
-	$new_address['address'] = $_POST['address'];
-	$new_address['city'] = $_POST['city'];
-	$new_address['state'] = $_POST['state'];
-	$new_address['zip'] = $_POST['zip'];
-	$new_address['phone'] = $_POST['phone'];
+		 else {
 
-	array_push($address_book, $new_address);
-	$address_class->write($address_book);
+			$errorMessage = "";
+		    array_pop($_POST);			
 
-
-} else {
-
-	foreach ($_POST as $key => $value) {
-		if (empty($value)) {
-			echo "<h3>" . ucfirst($key) . " is empty.</h3>";
+			foreach ($_POST as $key => $value) {
+				if (empty($value)) {
+					echo "<h3>" . ucfirst($key) . " is empty.</h3>";
+				}
+			}
 		}
-	}
-}
+	//  catch(UnexpectedTypeException $e) {
+	//     $msg = $e->getMessage() . PHP_EOL;
+	// }	
 
 ?>
 
@@ -73,6 +86,9 @@ if (!empty($_POST['name']) && !empty($_POST['address']) && !empty($_POST['city']
 	<h3>Do you need add a entry to your address book?<br>Fill out the required fields below, then click ADD ENTRY:</h3>
 	        
 	        <form method="POST"> 
+	        	<? if (!empty($msg)) : ?>
+                	<?=$msg; ?>
+            	<? endif; ?>
 		           <p>
 		                <label for="name">Name</label>
 		                <input id="name" name="name" type="text" placeholder="required">
