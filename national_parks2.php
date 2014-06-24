@@ -32,7 +32,7 @@ $prevPage = $page - 1;
     <link rel="stylesheet" href="/css/bootstrap-theme.min.css" />
 
     <script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
-    <script src="bootstrap/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
 </head>
 <body>
     <div class="container">
