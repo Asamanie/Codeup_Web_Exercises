@@ -1,5 +1,26 @@
 <?php 
 
+$dbc = new PDO('mysql:host=127.0.0.1;dbname=codeup_pdo_test_db', 'Andrew', 'letmein');
+
+// Tell PDO to throw exceptions on error
+$dbc->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+$stmt = $dbc->prepare('INSERT INTO National_Parks (name, location, date_established, area_in_acres, description) VALUES (:name, :location, :date_established, :area_in_acres, :description)');
+
+
+if ($_POST) {
+	
+
+	$stmt->bindValue(':name',              $_POST['name'], PDO::PARAM_STR);
+    $stmt->bindValue(':location',          $_POST['location'],  PDO::PARAM_STR);
+    $stmt->bindValue(':date_established',  $_POST['date_established'],  PDO::PARAM_STR);
+    $stmt->bindValue(':area_in_acres',     $_POST['area_in_acres'],  PDO::PARAM_STR);
+    $stmt->bindValue(':description',       $_POST['description'],  PDO::PARAM_STR);
+
+    $stmt->execute();
+
+}
+
 function getOffset () {
 	if (isset ($_GET['page'])) {
 		$page = $_GET['page'];
@@ -9,10 +30,6 @@ function getOffset () {
 	return ($page - 1) * 4;
 }
 
-$dbc = new PDO('mysql:host=127.0.0.1;dbname=codeup_pdo_test_db', 'Andrew', 'letmein');
-
-// Tell PDO to throw exceptions on error
-$dbc->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 $query = 'SELECT * FROM National_Parks LIMIT 4 OFFSET ' . getOffset();
 $parks = $dbc->query($query)->fetchAll(PDO::FETCH_ASSOC);
@@ -40,6 +57,7 @@ $prevPage = $page - 1;
   <title>National_Parks</title>
 </head>
 <body>
+	<h3>National Parks</h3>
 	<table>
 		<tr>
 			<th>Name</th>
@@ -66,10 +84,11 @@ $prevPage = $page - 1;
     	<a href="?page=<?= $nextPage; ?>">Next &rarr;</a>
     <?php endif; ?>
 
+    <h3>Submit New Park</h3>
     <form method="POST">
             <p>
                 <label for="name">Park Name</label>
-                <input id="park_name" name="park_name" type="text">
+                <input id="name" name="name" type="text">
           	</p>
         	<p>
                 <label for="location">Location</label>
@@ -86,7 +105,7 @@ $prevPage = $page - 1;
             </p>
             <p>    
                 <label for="description">Description</label>
-                <textarea id="description" name="description" rows="25" cols="55" placeholder="write brief description of the park"></textarea>
+                <textarea id="description" name="description" rows="10" cols="30" placeholder="write brief description of the park"></textarea>
             </p>
             <p>
                 <input type="submit" value="Submit Park">
