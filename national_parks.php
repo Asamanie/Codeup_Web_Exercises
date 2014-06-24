@@ -55,10 +55,15 @@ $prevPage = $page - 1;
 <head>
   <meta charset="UTF-8">
   <title>National_Parks</title>
+
+  <link rel="stylesheet" href="/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="/css/bootstrap-theme.min.css" />
+
 </head>
-<body>
+<body bgcolor = "#E6E6FA">
+	<div class="container">
 	<h3>National Parks</h3>
-	<table>
+	<table class="table table-striped table-hover">
 		<tr>
 			<th>Name</th>
 			<th>Location</th>
@@ -76,6 +81,7 @@ $prevPage = $page - 1;
 			</tr>
 		<? endforeach; ?>
 	</table>
+
     <?php if ($page > 1): ?>
         <a href="?page=<?= $prevPage; ?>">&larr; Previous</a>
     <?php endif; ?>
@@ -85,7 +91,7 @@ $prevPage = $page - 1;
     <?php endif; ?>
 
     <h3>Submit New Park</h3>
-    <form method="POST">
+    	<form method="POST" role="form">
             <p>
                 <label for="name">Park Name</label>
                 <input id="name" name="name" type="text">
@@ -108,9 +114,10 @@ $prevPage = $page - 1;
                 <textarea id="description" name="description" rows="10" cols="30" placeholder="write brief description of the park"></textarea>
             </p>
             <p>
-                <input type="submit" value="Submit Park">
+                <button type="submit" class="btn btn-default">Submit New Park</button>
             </p>
         </form>
+    </div>    
 </body>
 </html>
 
